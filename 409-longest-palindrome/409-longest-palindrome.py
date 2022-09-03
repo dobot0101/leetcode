@@ -1,5 +1,7 @@
 class Solution:
     def longestPalindrome(self, s: str) -> int:
+        # 아래와 같이 collections 모듈의 Counter 클래스를 사용하면 
+        # 문자열에 문자별로 몇개씩 존재하는지 저장된 객체를 구할 수 있다
         # d = {}
         # for c in s:
         #     if c in d:
