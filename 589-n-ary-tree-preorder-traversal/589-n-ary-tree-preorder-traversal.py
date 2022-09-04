@@ -14,7 +14,6 @@ class Solution:
         res = []
         def helper(root: 'Node'):
             res.append(root.val)
-            
             if root.children:
                 for child in root.children:
                     helper(child)
