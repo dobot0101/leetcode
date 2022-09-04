@@ -11,10 +11,16 @@ class Solution:
         if not root:
             return []
         
-        result = [root.val]
+        res = []
+        def helper(root: 'Node'):
+            res.append(root.val)
+            
+            if root.children:
+                for child in root.children:
+                    helper(child)
         
-        for child in root.children:
-            result.extend(self.preorder(child))
+        helper(root)
         
-        return result
+        return res
+                
         
