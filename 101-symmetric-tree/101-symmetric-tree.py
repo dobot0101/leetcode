@@ -10,16 +10,16 @@ class Solution:
         queue = deque()
         queue.append((root.left, root.right))
         while queue:
-            left, right = queue.popleft()
-            if left == None and right == None:
+            left_node, right_node = queue.popleft()
+            if left_node == None and right_node == None:
                 continue
-            if left == None or right == None:
+            if left_node == None or right_node == None:
                 return False
-            if left.val != right.val:
+            if left_node.val != right_node.val:
                 return False
             
-            queue.append((left.left, right.right))            
-            queue.append((left.right, right.left))
+            queue.append((left_node.left, right_node.right))            
+            queue.append((left_node.right, right_node.left))
         
         return True
             
