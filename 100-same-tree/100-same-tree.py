@@ -23,29 +23,24 @@ class Solution:
 #         return checkSame(p, q)
     
         # bfs
-        q1 = deque()
-        q2 = deque()
-        q1.append(p)
-        q2.append(q)
-        
-        while q1 and q2:
-            v1 = q1.popleft()
-            v2 = q2.popleft()
-            
-            if v1 == None and v2 == None:
+        queue = deque()
+        queue.append((p, q))
+
+        while queue:
+            n1, n2 = queue.popleft()
+
+            if n1 == None and n2 == None:
                 continue
-            
-            if v1 == None or v2 == None:
+
+            if n1 == None or n2 == None:
                 return False
-            
-            if v1.val != v2.val:
+
+            if n1.val != n2.val:
                 return False
-            
-            q1.append(v1.left)
-            q1.append(v1.right)
-            q2.append(v2.left)
-            q2.append(v2.right)
-            
+
+            queue.append((n1.left, n2.left))
+            queue.append((n1.right, n2.right))
+
         return True
             
             
