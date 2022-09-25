@@ -19,21 +19,6 @@ class Solution:
         while q:
             node = q.popleft()
             
-#             if node.left:
-#                 if node.right:
-#                     node.left.next = node.right
-#                 else:
-#                     next_node = node.next
-#                     while next_node:
-#                         if node.next.left:
-#                             node.left.next = node.next.left
-#                             break
-#                         elif node.next.right:
-#                             node.left.next = node.next.right
-#                             break
-                        
-#                         next_node = next_node.next
-            
             if node.left and node.right:
                 node.left.next = node.right
             elif node.left and node.right == None:
@@ -57,20 +42,6 @@ class Solution:
                         node.right.next = next_node.right
                         break
                     next_node = next_node.next
-                    
-                
-            
-            # if node.next:
-            #     if node.next.left:
-            #         if node.right:
-            #             node.right.next = node.next.left
-            #         elif node.left:
-            #             node.left.next = node.next.left
-            #     elif node.next.right:
-            #         if node.right:
-            #             node.right.next = node.next.right
-            #         elif node.left:
-            #             node.left.next = node.next.right
                         
             if node.left:
                 q.append(node.left)
